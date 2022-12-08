@@ -1,3 +1,0 @@
-/mnt/c/Users/outisjie/Documents/code/hm0/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/outisjie/Documents/code/hm0/build/CMakeFiles/Transformation.dir
-/mnt/c/Users/outisjie/Documents/code/hm0/build/CMakeFiles/edit_cache.dir

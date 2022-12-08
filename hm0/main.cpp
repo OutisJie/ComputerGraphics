@@ -49,7 +49,13 @@ int main(){
     * PA 0
     */
     // TO DO: Define point P
+    Eigen::Vector3f p(2.0f, 1.0f, 0.0f);
     // TO DO: Define rotation matrix M
+    Eigen::AngleAxisf angle(M_PI / 4, Eigen::Vector3f::UnitZ());
+    Eigen::Matrix3f r = angle.matrix();
+    Eigen::Translation3f t(1.0f, 2.0f, 0.0f);
     // TO DO: M * P
+    Eigen::Vector3f result = t*r*p;
+    std::cout << result << std::endl;
     return 0;
 }
