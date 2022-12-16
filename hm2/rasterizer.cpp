@@ -129,15 +129,15 @@ void rst::rasterizer::rasterize_triangle(const Triangle& t) {
     // iterate through the pixel and find if the current pixel is inside the triangle
     for (int i = left_right.first; i <= left_right.second; i++) {
         for (int j = top_bottom.first; j <= top_bottom.second; j++) {
-            // MASS
-            std::array<Eigen::Vector3f, 4> mass;
-            mass[0] << i - 0.25, j - 0.25, 0;
-            mass[1] << i - 0.25, j + 0.25, 0;
-            mass[2] << i + 0.25, j - 0.25, 0;
-            mass[3] << i + 0.25, j + 0.25, 0;
+            // MSAA
+            std::array<Eigen::Vector3f, 4> msaa;
+            msaa[0] << i - 0.25, j - 0.25, 0;
+            msaa[1] << i - 0.25, j + 0.25, 0;
+            msaa[2] << i + 0.25, j - 0.25, 0;
+            msaa[3] << i + 0.25, j + 0.25, 0;
             float ratio = 0;
-            for (auto &m:mass) {
-                if (insideTriangle(mass[0][0], mass[0][1], t.v)) {
+            for (auto &m:msaa) {
+                if (insideTriangle(msaa[0][0], msaa[0][1], t.v)) {
                     ratio += 0.25;
                 }
             }
